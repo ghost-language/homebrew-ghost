@@ -2,16 +2,16 @@
 class Ghost < Formula
   desc "https://github.com/ghost-language/ghost."
   homepage ""
-  version "0.8.0"
+  version "0.9.0"
   bottle :unneeded
 
   if OS.mac?
-    url "https://github.com/ghost-language/ghost/releases/download/v0.8.0/ghost_0.8.0_Darwin_x86_64.tar.gz"
-    sha256 "146d5598edd50e591433a9b2a6d75edbec621d6ff269b9d75999005245f41a84"
+    url "https://github.com/ghost-language/ghost/releases/download/v0.9.0/ghost_0.9.0_Darwin_x86_64.tar.gz"
+    sha256 "a7b2e7d5ff36c80be58e55dfd1a0d3858f812b774044d39c7ff6cd3c6b18ccf4"
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/ghost-language/ghost/releases/download/v0.8.0/ghost_0.8.0_Linux_x86_64.tar.gz"
-    sha256 "509b7ebe5fe268178390e52af4b7d115b6e4410823cf1d8b103cd7b90d690dda"
+    url "https://github.com/ghost-language/ghost/releases/download/v0.9.0/ghost_0.9.0_Linux_x86_64.tar.gz"
+    sha256 "a1093d09a0e4aab1ea175655efdc77f46e2ab46e84dd5aa1cd2dced635bd1c40"
   end
   
   depends_on "git"
