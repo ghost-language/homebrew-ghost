@@ -5,20 +5,24 @@
 class Ghost < Formula
   desc "https://github.com/ghost-language/ghost."
   homepage ""
-  version "0.11.0"
+  version "0.12.0"
   bottle :unneeded
 
-  if OS.mac?
-    url "https://github.com/ghost-language/ghost/releases/download/v0.11.0/ghost_0.11.0_Darwin_x86_64.tar.gz"
-    sha256 "6084c8c2c9b1fc2c323309249dcd856548572afaddd47e071e17ad8fa1a94342"
+  if OS.mac? && Hardware::CPU.intel?
+    url "https://github.com/ghost-language/ghost/releases/download/v0.12.0/ghost_0.12.0_Darwin_x86_64.tar.gz"
+    sha256 "b02b3af0d367d22184103991b3649925ae53f81eb1f4ca64f29ab33fe2f244d4"
+  end
+  if OS.mac? && Hardware::CPU.arm?
+    url "https://github.com/ghost-language/ghost/releases/download/v0.12.0/ghost_0.12.0_Darwin_arm64.tar.gz"
+    sha256 "8813107efdf360791cb32237fb97382470b476919150562c40021bcea37b00e0"
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/ghost-language/ghost/releases/download/v0.11.0/ghost_0.11.0_Linux_x86_64.tar.gz"
-    sha256 "33bd7822e6d46c153a818614dd3592a4cfbac3104294b2fa780367b8adb8a5b3"
+    url "https://github.com/ghost-language/ghost/releases/download/v0.12.0/ghost_0.12.0_Linux_x86_64.tar.gz"
+    sha256 "ffed0844779120d883fe97e9d71560172c63dfbd14a0137b1918ae59036f0735"
   end
   if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-    url "https://github.com/ghost-language/ghost/releases/download/v0.11.0/ghost_0.11.0_Linux_arm64.tar.gz"
-    sha256 "853ccc5411c4b0f49846565a1db3a26cd253f4a4f10115496c88ce7920008ef7"
+    url "https://github.com/ghost-language/ghost/releases/download/v0.12.0/ghost_0.12.0_Linux_arm64.tar.gz"
+    sha256 "433c4c4914e51e5ffb92601bc4e370bc897666cb7ac18f2c9d7c40d110c9e5e3"
   end
 
   depends_on "git"
