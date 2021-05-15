@@ -5,24 +5,28 @@
 class Ghost < Formula
   desc "https://github.com/ghost-language/ghost."
   homepage ""
-  version "0.14.0"
+  version "0.15.0"
   bottle :unneeded
 
   if OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/ghost-language/ghost/releases/download/v0.14.0/ghost_0.14.0_Darwin_x86_64.tar.gz"
-    sha256 "f2993f20be1d4653d3866f565d4ee8002df172a828f2fb35fdd81825b7c747b6"
+    url "https://github.com/ghost-language/ghost/releases/download/v0.15.0/ghost_0.15.0_darwin_amd64.tar.gz"
+    sha256 "b0d79869f43ada48590067cebe36d93cfee9f1b584aac18466063710613bc317"
   end
   if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/ghost-language/ghost/releases/download/v0.14.0/ghost_0.14.0_Darwin_arm64.tar.gz"
-    sha256 "c629099df8e2c06a3004fa3ad3273eae8af1f4006dd98a06961a52412183a4f4"
+    url "https://github.com/ghost-language/ghost/releases/download/v0.15.0/ghost_0.15.0_darwin_arm64.tar.gz"
+    sha256 "feb987e1d86d1774b848826bb512b0192a11570ac4dbf69adb5602f63605a5fc"
   end
   if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/ghost-language/ghost/releases/download/v0.14.0/ghost_0.14.0_Linux_x86_64.tar.gz"
-    sha256 "87de3aca769b7cae2d8714c67a7aab97f3f722db578791074aae360f23972a22"
+    url "https://github.com/ghost-language/ghost/releases/download/v0.15.0/ghost_0.15.0_linux_amd64.tar.gz"
+    sha256 "4fd1437c1728e22f7664e72053b223feb0b804333912a6769031ac5e5d6bde11"
+  end
+  if OS.linux? && Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
+    url "https://github.com/ghost-language/ghost/releases/download/v0.15.0/ghost_0.15.0_linux_armv6.tar.gz"
+    sha256 "c9aff3bd0a6f73af203a06c538f68935408ffcbd6e7bbf87201dd275373efbad"
   end
   if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-    url "https://github.com/ghost-language/ghost/releases/download/v0.14.0/ghost_0.14.0_Linux_arm64.tar.gz"
-    sha256 "7345dbb241f16832f9258cbc4462834e52bbfa354a25d011ac402bbdef6883f3"
+    url "https://github.com/ghost-language/ghost/releases/download/v0.15.0/ghost_0.15.0_linux_arm64.tar.gz"
+    sha256 "05707cd8a951d06fa77121905b3a296836b433c97a3d2b4d663ef6265088d6cd"
   end
 
   depends_on "git"
