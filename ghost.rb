@@ -5,28 +5,33 @@
 class Ghost < Formula
   desc "https://github.com/ghost-language/ghost."
   homepage ""
-  version "0.15.0"
+  version "0.16.0"
   bottle :unneeded
 
-  if OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/ghost-language/ghost/releases/download/v0.15.0/ghost_0.15.0_darwin_amd64.tar.gz"
-    sha256 "b0d79869f43ada48590067cebe36d93cfee9f1b584aac18466063710613bc317"
+  on_macos do
+    if Hardware::CPU.intel?
+      url "https://github.com/ghost-language/ghost/releases/download/v0.16.0/ghost_0.16.0_darwin_amd64.tar.gz"
+      sha256 "f34494b1d926d0d26e9f31bbaed98d9a57c190c5c643dbbc7680887db5efc183"
+    end
+    if Hardware::CPU.arm?
+      url "https://github.com/ghost-language/ghost/releases/download/v0.16.0/ghost_0.16.0_darwin_arm64.tar.gz"
+      sha256 "84199e0d53343ead5bc9a5bbe1974fbf6c78659f17951fb492a41b7b4ff98660"
+    end
   end
-  if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/ghost-language/ghost/releases/download/v0.15.0/ghost_0.15.0_darwin_arm64.tar.gz"
-    sha256 "feb987e1d86d1774b848826bb512b0192a11570ac4dbf69adb5602f63605a5fc"
-  end
-  if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/ghost-language/ghost/releases/download/v0.15.0/ghost_0.15.0_linux_amd64.tar.gz"
-    sha256 "4fd1437c1728e22f7664e72053b223feb0b804333912a6769031ac5e5d6bde11"
-  end
-  if OS.linux? && Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-    url "https://github.com/ghost-language/ghost/releases/download/v0.15.0/ghost_0.15.0_linux_armv6.tar.gz"
-    sha256 "c9aff3bd0a6f73af203a06c538f68935408ffcbd6e7bbf87201dd275373efbad"
-  end
-  if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-    url "https://github.com/ghost-language/ghost/releases/download/v0.15.0/ghost_0.15.0_linux_arm64.tar.gz"
-    sha256 "05707cd8a951d06fa77121905b3a296836b433c97a3d2b4d663ef6265088d6cd"
+
+  on_linux do
+    if Hardware::CPU.intel?
+      url "https://github.com/ghost-language/ghost/releases/download/v0.16.0/ghost_0.16.0_linux_amd64.tar.gz"
+      sha256 "fd22f10dec6dc1b04dcd7546b3d14922efb85357aac8eb3d6941aec54862b6ae"
+    end
+    if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
+      url "https://github.com/ghost-language/ghost/releases/download/v0.16.0/ghost_0.16.0_linux_armv6.tar.gz"
+      sha256 "18ea9dd7881c0b735898802165a5969145b730ec5b5361d92913133a86127c1b"
+    end
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/ghost-language/ghost/releases/download/v0.16.0/ghost_0.16.0_linux_arm64.tar.gz"
+      sha256 "b7088f3637f71dae9b1a581b3a88f55717b771d7266621ad98de24684f0df4cd"
+    end
   end
 
   depends_on "git"
