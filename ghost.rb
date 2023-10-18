@@ -5,23 +5,23 @@
 class Ghost < Formula
   desc "https://github.com/ghost-language/ghost."
   homepage ""
-  version "0.18.0"
+  version "0.19.0"
 
   depends_on "git"
   depends_on "zsh"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/ghost-language/ghost/releases/download/v0.18.0/ghost_0.18.0_darwin_arm64.tar.gz"
-      sha256 "3fce17963aa7820cde19ea13fa6ab760c545229f19820400f3dee474c13976e1"
+      url "https://github.com/ghost-language/ghost/releases/download/v0.19.0/ghost_0.19.0_darwin_arm64.tar.gz"
+      sha256 "70b81d7208b5ffd9e77f90effe6005227b109799e0312d5e956b65bde9827970"
 
       def install
         bin.install "ghost"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/ghost-language/ghost/releases/download/v0.18.0/ghost_0.18.0_darwin_amd64.tar.gz"
-      sha256 "e2e4a761bec090774a58c543207ff656c46ac128af6fbae12e8023d9196ff820"
+      url "https://github.com/ghost-language/ghost/releases/download/v0.19.0/ghost_0.19.0_darwin_amd64.tar.gz"
+      sha256 "169cfa07f1929752576367983fa6480a3a9cec7d48508c017f5564a3eae6ea99"
 
       def install
         bin.install "ghost"
@@ -31,24 +31,24 @@ class Ghost < Formula
 
   on_linux do
     if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/ghost-language/ghost/releases/download/v0.18.0/ghost_0.18.0_linux_armv6.tar.gz"
-      sha256 "d682f46cd0f6472f88503dfb1808bfdf633b142f1c9779c642cdc78276bb343d"
+      url "https://github.com/ghost-language/ghost/releases/download/v0.19.0/ghost_0.19.0_linux_armv6.tar.gz"
+      sha256 "9fcbbb5aa8eab7d464790ced56e8dbe014c7f7018cc7c5fc70613a13249c2a92"
 
       def install
         bin.install "ghost"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/ghost-language/ghost/releases/download/v0.18.0/ghost_0.18.0_linux_arm64.tar.gz"
-      sha256 "bcbe932095bd845a814160b97ad4a869b6c29b66d8613dd49772c9ba12273130"
+      url "https://github.com/ghost-language/ghost/releases/download/v0.19.0/ghost_0.19.0_linux_arm64.tar.gz"
+      sha256 "e6b4a9e0a397ba4bd758c8c22915aeb08e6ae7106994d3d562807a228f7ff3c5"
 
       def install
         bin.install "ghost"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/ghost-language/ghost/releases/download/v0.18.0/ghost_0.18.0_linux_amd64.tar.gz"
-      sha256 "c9e704955c3dc98026ae18ff1314f19b13dcf352fbf0b1393a79ead0c1367478"
+      url "https://github.com/ghost-language/ghost/releases/download/v0.19.0/ghost_0.19.0_linux_amd64.tar.gz"
+      sha256 "f481a8dc3a52fd9af2089f62ff9ba6103beedfba2e05455b43429ab0ae3d57a1"
 
       def install
         bin.install "ghost"
